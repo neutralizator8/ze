@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl"> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&#380ycie entertainment</title>
+    <meta name="description" content="zycie entertainment - prace autorstwa Mateusza Biezunskiego" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="wizaksus.css" type="text/css"/>
+</head>
+
+<body>
+   <div class="wrapper">
+        <div class="menu">
+            <div class="logo">
+                <a href="GALERIA.html">życie entertainment</a>
+            </div>
+            <div class="nav">
+                <ol>
+                    <li> <a href="audio.23.html"> I </a> </li> 
+                    <li> <a href="wideo.23.html"> II </a> </li> 
+                    <li> <a href="grafika.23.html"> III </a> </li> 
+                    <li> <a href="Obiekty.23.html"> IV </a> </li> 
+                    <li> <a href="o_mnie_i_kontakt.23.html"> V </a> </li> 
+                </ol>
+            </div>
+            <div class="teraz"> teraz oglądasz: </div>
+            <div class="nazwa"> o mnie & kontakt </div>
+            <div class="info-container">
+                <div class="info-icon">i</div>
+                <div class="info-content">
+                    <p class="info-title">informacje na temat oznaczeń zawartości menu:</p>
+                    <ul class="info-list">
+                        <li><span>I.</span><span>audio</span></li>
+                        <li><span>II.</span><span>wideo</span></li>
+                        <li><span>III.</span><span>grafika</span></li>
+                        <li><span>IV.</span><span>obiekty</span></li>
+                        <li><span>V.</span><span>o mnie & kontakt</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            
+        <div class="content">
+
+            <div class="main-content">
+                <div class="image-frame">
+                    <div class="image-placeholder"> 
+                        <img src="Wypelnienie/O mnie/IMG_7370.webp" alt="Mateusz Bieżuński">
+                    </div>
+                    <div class="labels-container">
+                        <div class="label-group item-opis">
+                            <div class="label-tag">o mnie</div>
+                            <div class="hover-content">
+                                Jestem Mateusz i kocham robić wszystko co się da.
+                            </div>
+                        </div>
+                        <div class="label-group item-technika">
+                            <div class="label-tag">kontakt</div>
+                            <div class="hover-content">
+                                email: matbiezunski@gmail.com<br>
+                                instagram: <a href="https://www.instagram.com/mateusz.biee/" target="_blank"> @mateusz.biee </a>
+                            </div>
+                        </div>
+                        <div class="label-group item-autor">
+                            <div class="label-tag">o galerii</div>
+                            <div class="hover-content">
+                                <b>Życie Entertainment</b> to taki projekt, <br>
+                                który zamyka w jednym uniwersum <br>
+                                wszystko co tworzę. <br>
+                                To taki wewnętrzny system, <br>
+                                który pozwala mi budować to wszystko <br>
+                                w miarę systematycznie. <br>
+                                Ta strona, (czy tam galeria, jak zwał, tak zwał)<br>
+                                to powód, aby się tym wszystkim dzielić, <br>
+                                bez ograniczeń zewnętrznych platform. <br>
+                                Napisana samemu, bo nie moze być za nudno hehe.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blob"></div>
+            <div class="blob"></div>
+
+        </div>
+        
+        <div class="footer"> 
+            <div class="navi"> To juz koniec tej strony, ale nie koniec&nbsp;<b> tej strony! </b> </div>
+        </div>
+    </div>
+    <script>
+  // znajdujemy wszystkie grupy etykiet
+  document.querySelectorAll('.label-group').forEach(group => {
+    // dodajemy obsługę kliknięcia/tąpnięcia
+    group.addEventListener('click', function(e) {
+      // jeśli klikamy na telefonie, nie chcemy żeby od razu chowało opis
+      e.stopPropagation();
+      
+      // sprawdzamy czy ta etykieta jest już otwarta
+      const isOpen = this.classList.contains('active');
+      
+      // zamykamy wszystkie inne otwarte opisy, żeby nie nakładały się na siebie
+      document.querySelectorAll('.label-group').forEach(g => g.classList.remove('active'));
+      
+      // jeśli nie była otwarta – otwieramy ją
+      if (!isOpen) {
+        this.classList.add('active');
+      } else {
+        this.classList.remove('active');
+      }
+    });
+  });
+
+  // kliknięcie gdziekolwiek indziej na stronie zamyka otwarty opis
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.label-group').forEach(g => g.classList.remove('active'));
+  });
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,389 @@
+body {
+    background-color: #e6e6e6;
+    background-size: 100%;
+    color: black;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    margin: 0 !important;
+}
+
+/* elastyczne menu górne */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 90;
+    box-sizing: border-box;
+}
+
+.logo {
+    flex: 0 0 195px;
+    border: 0.01cm solid #000000;
+    background-color: #e6e6e6;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo:hover {
+    background-color: #6395ff;
+}
+
+/* usunięte sztywne 1447px - teraz zajmuje dostępną przestrzeń */
+.nav {
+    flex: 1;
+    border: 0.01cm solid #000000;
+    background-color: #e6e6e6;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.teraz {
+    flex: 0 0 135px;
+    border: 0.01cm solid #000000;
+    background-color: #e6e6e6;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.nazwa {
+    flex: 0 0 143px;
+    border: 0.01cm solid #000000;
+    background-color: #6395ff;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+/* menu wewnątrz .nav (ol) */
+ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+ol a {
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+ol > li {
+    flex: 1;
+    text-align: center;
+}
+
+ol > li:hover {
+    font-family: Arial, sans-serif;
+}
+
+/* główny kontener na treści - elastyczny */
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* elastyczne obrazki */
+img {
+    max-width: 100%;
+    height: auto !important;
+    display: block;
+}
+
+/* ==========================================================================
+   POPRAWIONE I RESPONSYWNE RAMY ORAZ ZDJĘCIA
+   ========================================================================== */
+
+/* elastyczny kontener na całą kartę pracy */
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* rama zdjęcia - teraz idealnie dopasowuje się do szerokości */
+.image-frame {
+    background-color: #e6e6e6;
+    padding: 5px 5px 35px 5px; /* powiększony dolny padding na etykiety */
+    border: 0.01cm solid #000000;
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* maksymalna szerokość ramy na kompie, możesz ją zwiększyć np. do 600px */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* kontenery na zdjęcia - elastyczna wysokość bazująca na proporcjach */
+.image-placeholder,
+.image-hover-swap {
+    position: relative;
+    display: block; 
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/* globalne ustawienie dla wszystkich obrazków wewnątrz ram */
+.image-frame img {
+    width: 100%;
+    height: auto !important; /* nadpisuje stare wysokości, obrazek zachowuje proporcje */
+    display: block;
+    object-fit: contain; /* pilnuje, żeby obrazek nie był ściśnięty */
+}
+
+/* płynne przykrywanie drugiego zdjęcia */
+.image-hover-swap .img-second {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-hover-swap:hover .img-second {
+    opacity: 1 !important;
+}
+
+/* kontener na etykiety na samym dole ramy */
+.labels-container {
+    position: absolute;
+    bottom: 5px; /* stabilne trzymanie się dołu ramy */
+    left: 10px;
+    right: 10px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.label-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-technika { align-items: center; }
+.item-autor { align-items: flex-end; }
+.label-tag { cursor: pointer; font-size: 14px; padding: 1px 5px; }
+
+.item-opis .label-tag { background-color: #63993c; align-self: flex-start;}
+.item-technika .label-tag { background-color: #de7833; align-self: center;}
+.item-autor .label-tag { background-color: #dd99ff; align-self: flex-end;}
+
+/* zmiana kierunku otwierania okienek - teraz w dół */
+.hover-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* otwiera się w dół od etykiety */
+    left: 0;
+    width: 250px;
+    padding: 15px;
+    font-size: 14px;
+    z-index: 10;
+    margin-top: 0px; /* delikatny odstęp od przycisku */
+    text-align: center;
+}
+
+.item-opis .hover-content { background-color: #73ac56; border: 4px solid #63993c; }
+.item-technika .hover-content { 
+    background-color: #f0a147; 
+    border: 4px solid #de7833; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+.item-autor .hover-content { 
+    background-color: #e3caff; 
+    border: 4px solid #dd99ff; 
+    left: auto;
+    right: 0;
+}
+
+.label-group:hover .hover-content, 
+.label-group.active .hover-content {
+    display: block;
+}
+
+/* okienko informacji "i" */
+.info-container {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff15b;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.info-container:hover {
+    width: 280px;
+    height: auto;
+    border-radius: 0 20px 0 0;
+}
+
+.info-icon {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.info-content {
+    opacity: 0;
+    padding: 40px 15px 15px 15px;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.info-container:hover .info-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.info-title {
+    background-color: rgba(0,0,0,0.05);
+    font-size: 11px;
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.info-list { list-style: none; padding: 0; margin: 0; }
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* stopka */
+.footer {
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.navi {
+    width: 100%;
+    border: 0.01cm solid #000000;
+    background-color: #e6e6e6;
+    height: 30px;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.blob { height: 150px; }
+
+/* ==========================================================================
+   MEDIA QUERIES - UKŁAD DLA TELEFONÓW (EKRANY PONIŻEJ 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu {
+        /* zmienione na fixed, żeby pasek cały czas stał w miejscu */
+        position: fixed; 
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .logo, .teraz, .nazwa {
+        flex: none;
+        width: 100% !important;
+        height: auto;
+        padding: 8px 0;
+    }
+
+    /* nawigacja dalej idzie od lewej do prawej */
+    .nav {
+        flex: none;
+        width: 100% !important;
+        height: auto;
+        padding: 8px 0;
+    }
+
+    ol {
+        flex-direction: row; 
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    ol > li {
+        width: auto;
+        flex: 1;
+    }
+
+    ol a {
+        font-size: 14px; 
+        padding: 5px 0;
+    }
+
+    /* kluczowa zmiana: większy margines od góry dla zawartości, 
+       ponieważ pionowe menu na telefonie jest teraz wyższe i zasłoniłoby zdjęcia */
+    .content {
+        margin-top: 160px; 
+    }
+
+    .main-content {
+        padding-top: 20px;
+    }
+
+    .hover-content {
+        width: 200px;
+        font-size: 12px;
+    }
+    
+    .info-container:hover {
+        width: 250px;
+    }
+}
