@@ -405,3 +405,36 @@ img {
         width: 250px;
     }
 }
+
+
+/* nowy, czysty kontener bez ramek i opisów */
+.image-frame-clean {
+    background-color: transparent; /* brak szarego tła ramki */
+    padding: 0; /* brak wewnętrznych odstępów */
+    border: none !important; /* całkowite usunięcie czarnej ramki */
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* trzyma taki sam rozmiar jak reszta kart na kompie */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* upewniamy się, że zdjęcia w czystym kontenerze też idealnie się skalują */
+.image-frame-clean .image-hover-swap {
+    position: relative;
+    display: block; 
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.image-frame-clean img {
+    width: 100%;
+    height: auto !important;
+    display: block;
+    object-fit: contain;
+}
