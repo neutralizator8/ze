@@ -6,7 +6,7 @@ body {
     margin: 0 !important;
 }
 
-/* elastyczne menu górne */
+
 .menu {
     display: flex;
     justify-content: space-between;
@@ -40,7 +40,7 @@ body {
     background-color: #6395ff;
 }
 
-/* usunięte sztywne 1447px - teraz zajmuje dostępną przestrzeń */
+
 .nav {
     flex: 1;
     border: 0.01cm solid #000000;
@@ -76,7 +76,7 @@ body {
     box-sizing: border-box;
 }
 
-/* menu wewnątrz .nav (ol) */
+
 ol {
     padding: 0;
     margin: 0;
@@ -103,7 +103,7 @@ ol > li:hover {
     font-family: Arial, sans-serif;
 }
 
-/* główny kontener na treści - elastyczny */
+
 .content {
     width: 100%;
     max-width: 1000px;
@@ -114,18 +114,16 @@ ol > li:hover {
     box-sizing: border-box;
 }
 
-/* elastyczne obrazki */
+
 img {
     max-width: 100%;
     height: auto !important;
     display: block;
 }
 
-/* ==========================================================================
-   POPRAWIONE I RESPONSYWNE RAMY ORAZ ZDJĘCIA
-   ========================================================================== */
 
-/* elastyczny kontener na całą kartę pracy */
+
+
 .main-content {
     display: flex;
     justify-content: center;
@@ -136,14 +134,14 @@ img {
     box-sizing: border-box;
 }
 
-/* rama zdjęcia - teraz idealnie dopasowuje się do szerokości */
+
 .image-frame {
     background-color: #e6e6e6;
-    padding: 5px 5px 35px 5px; /* powiększony dolny padding na etykiety */
+    padding: 5px 5px 35px 5px; 
     border: 0.01cm solid #000000;
     position: relative;
     width: 100%;
-    max-width: 500px; /* maksymalna szerokość ramy na kompie, możesz ją zwiększyć np. do 600px */
+    max-width: 500px; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -157,11 +155,11 @@ img {
 
 .image-frame-1 {
     background-color: #e6e6e6;
-    padding: 5px 5px 35px 5px; /* powiększony dolny padding na etykiety */
+    padding: 5px 5px 35px 5px; 
     border: 0.01cm solid #e6e6e6;
     position: relative;
     width: 100%;
-    max-width: 500px; /* maksymalna szerokość ramy na kompie, możesz ją zwiększyć np. do 600px */
+    max-width: 500px; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -170,7 +168,7 @@ img {
     margin: 0 auto;
 }
 
-/* kontenery na zdjęcia - elastyczna wysokość bazująca na proporcjach */
+
 .image-placeholder,
 .image-hover-swap {
     position: relative;
@@ -180,15 +178,15 @@ img {
     overflow: hidden;
 }
 
-/* globalne ustawienie dla wszystkich obrazków wewnątrz ram */
+
 .image-frame img {
     width: 100%;
-    height: auto !important; /* nadpisuje stare wysokości, obrazek zachowuje proporcje */
+    height: auto !important; 
     display: block;
-    object-fit: contain; /* pilnuje, żeby obrazek nie był ściśnięty */
+    object-fit: contain; 
 }
 
-/* płynne przykrywanie drugiego zdjęcia */
+
 .image-hover-swap .img-second {
     position: absolute;
     top: 0;
@@ -203,10 +201,10 @@ img {
     opacity: 1 !important;
 }
 
-/* kontener na etykiety na samym dole ramy */
+
 .labels-container {
     position: absolute;
-    bottom: 5px; /* stabilne trzymanie się dołu ramy */
+    bottom: 5px; 
     left: 10px;
     right: 10px;
     height: 25px;
@@ -230,17 +228,17 @@ img {
 .item-technika .label-tag { background-color: #de7833; align-self: center;}
 .item-autor .label-tag { background-color: #dd99ff; align-self: flex-end;}
 
-/* zmiana kierunku otwierania okienek - teraz w dół */
+
 .hover-content {
     display: none;
     position: absolute;
-    top: 100%; /* otwiera się w dół od etykiety */
+    top: 100%; 
     left: 0;
     width: 250px;
     padding: 15px;
     font-size: 14px;
     z-index: 10;
-    margin-top: 0px; /* delikatny odstęp od przycisku */
+    margin-top: 0px; 
     text-align: center;
 }
 
@@ -263,7 +261,7 @@ img {
     display: block;
 }
 
-/* okienko informacji "i" */
+
 .info-container {
     position: absolute;
     top: 100%;
@@ -321,7 +319,7 @@ img {
     font-size: 16px;
 }
 
-/* stopka */
+
 .footer {
     padding-top: 50px;
     width: 100%;
@@ -342,12 +340,10 @@ img {
 
 .blob { height: 150px; }
 
-/* ==========================================================================
-   MEDIA QUERIES - UKŁAD DLA TELEFONÓW (EKRANY PONIŻEJ 768px)
-   ========================================================================== */
+
 @media (max-width: 768px) {
     .menu {
-        /* zmienione na fixed, żeby pasek cały czas stał w miejscu */
+        
         position: fixed; 
         top: 0;
         left: 0;
@@ -362,7 +358,7 @@ img {
         padding: 8px 0;
     }
 
-    /* nawigacja dalej idzie od lewej do prawej */
+    
     .nav {
         flex: none;
         width: 100% !important;
@@ -386,8 +382,6 @@ img {
         padding: 5px 0;
     }
 
-    /* kluczowa zmiana: większy margines od góry dla zawartości, 
-       ponieważ pionowe menu na telefonie jest teraz wyższe i zasłoniłoby zdjęcia */
     .content {
         margin-top: 160px; 
     }
@@ -407,14 +401,14 @@ img {
 }
 
 
-/* nowy, czysty kontener bez ramek i opisów */
+
 .image-frame-clean {
-    background-color: transparent; /* brak szarego tła ramki */
-    padding: 0; /* brak wewnętrznych odstępów */
-    border: none !important; /* całkowite usunięcie czarnej ramki */
+    background-color: transparent; 
+    padding: 0; 
+    border: none !important; 
     position: relative;
     width: 100%;
-    max-width: 500px; /* trzyma taki sam rozmiar jak reszta kart na kompie */
+    max-width: 500px; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -423,7 +417,7 @@ img {
     margin: 0 auto;
 }
 
-/* upewniamy się, że zdjęcia w czystym kontenerze też idealnie się skalują */
+
 .image-frame-clean .image-hover-swap {
     position: relative;
     display: block; 
