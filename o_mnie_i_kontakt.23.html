@@ -89,20 +89,20 @@
         
     </div>
     <script>
-  // znajdujemy wszystkie grupy etykiet
+
   document.querySelectorAll('.label-group').forEach(group => {
-    // dodajemy obsługę kliknięcia/tąpnięcia
+
     group.addEventListener('click', function(e) {
-      // jeśli klikamy na telefonie, nie chcemy żeby od razu chowało opis
+  
       e.stopPropagation();
       
-      // sprawdzamy czy ta etykieta jest już otwarta
+
       const isOpen = this.classList.contains('active');
       
-      // zamykamy wszystkie inne otwarte opisy, żeby nie nakładały się na siebie
+
       document.querySelectorAll('.label-group').forEach(g => g.classList.remove('active'));
       
-      // jeśli nie była otwarta – otwieramy ją
+
       if (!isOpen) {
         this.classList.add('active');
       } else {
