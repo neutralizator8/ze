@@ -158,6 +158,7 @@ img {
 .image-frame-1 {
     background-color: #e6e6e6;
     padding: 5px 5px 35px 5px; /* powiększony dolny padding na etykiety */
+    border: 0.01cm solid #e6e6e6;
     position: relative;
     width: 100%;
     max-width: 500px; /* maksymalna szerokość ramy na kompie, możesz ją zwiększyć np. do 600px */
