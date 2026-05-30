@@ -437,12 +437,9 @@ img {
 .button {
 
 position: absolute;
-    bottom: 5px; 
-    left: 10px;
-    right: 10px;
-    height: 25px;
+    
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     z-index: 5;
 
