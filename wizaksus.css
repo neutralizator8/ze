@@ -436,15 +436,24 @@ img {
 
 .button {
 
-background-color: red;
+background-color: rgb(255, 118, 118);
 color: rgb(162, 0, 0);
 padding: 1%;
-border-radius: 0,1%;
+border: 10px;
+border-color: rgb(162, 0, 0);
+text-align: center;
+width: 100px;
+}
 
+.button a {
 
+text-decoration :none;
+color: #e6e6e6;
+}
 
+.button:hover {
 
-
+background-color: rgb(162, 0, 0);
 
 
 }
