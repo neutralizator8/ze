@@ -152,6 +152,23 @@ img {
     margin: 0 auto;
 }
 
+
+
+
+.image-frame-alt {
+    background-color: #e6e6e6;
+    padding: 5px 5px 35px 5px; /* powiększony dolny padding na etykiety */
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* maksymalna szerokość ramy na kompie, możesz ją zwiększyć np. do 600px */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 /* kontenery na zdjęcia - elastyczna wysokość bazująca na proporcjach */
 .image-placeholder,
 .image-hover-swap {
